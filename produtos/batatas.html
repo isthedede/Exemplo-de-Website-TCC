@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalhes do Produto - Frutas Frescas</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Batatas - Frutas Frescas</title>
+    <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -21,12 +21,12 @@
                 <div class="search-results"></div>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="produtos.html">Produtos</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="contato.html">Contato</a></li>
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="../produtos.html">Produtos</a></li>
+                <li><a href="../sobre.html">Sobre</a></li>
+                <li><a href="../contato.html">Contato</a></li>
             </ul>
-            <a href="carrinho.html" class="carrinho-btn" aria-label="Abrir carrinho">
+            <a href="../carrinho.html" class="carrinho-btn" aria-label="Abrir carrinho">
                 <i class="fas fa-shopping-cart"></i>
                 <span class="carrinho-contador">0</span>
             </a>
@@ -36,12 +36,12 @@
     <main class="produto-detalhes">
         <div class="produto-container">
             <div class="produto-imagem">
-                <img src="" alt="" id="produto-img">
+                <img src="https://revistasaboresdosul.com.br/wp-content/uploads/2020/06/batatas-2.jpg" alt="Batatas" id="produto-img">
             </div>
             <div class="produto-info">
-                <h2 id="produto-nome"></h2>
+                <h2 id="produto-nome">Batatas</h2>
                 <div class="produto-preco">
-                    <span class="preco" id="produto-preco"></span>
+                    <span class="preco" id="produto-preco">R$ 6,90</span>
                     <span class="unidade">/kg</span>
                 </div>
                 <div class="produto-avaliacao">
@@ -50,18 +50,37 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
                     </div>
-                    <span class="avaliacoes-count">(127 avaliações)</span>
+                    <span class="avaliacoes-count">(67 avaliações)</span>
                 </div>
                 <div class="produto-descricao">
                     <h3>Descrição</h3>
-                    <p id="produto-descricao"></p>
+                    <p id="produto-descricao">Batatas frescas e de alta qualidade, ideais para diversos pratos. Nossas batatas são cultivadas sem o uso de agrotóxicos prejudiciais e chegam até você no ponto perfeito para o consumo. Excelentes para frituras, assados ou purês.</p>
                 </div>
                 <div class="produto-nutricional">
                     <h3>Informações Nutricionais</h3>
                     <ul id="produto-nutricional">
-                        <!-- Preenchido via JavaScript -->
+                        <li>
+                            <span>Calorias</span>
+                            <span>77 kcal</span>
+                        </li>
+                        <li>
+                            <span>Carboidratos</span>
+                            <span>17g</span>
+                        </li>
+                        <li>
+                            <span>Proteínas</span>
+                            <span>2g</span>
+                        </li>
+                        <li>
+                            <span>Fibras</span>
+                            <span>2.2g</span>
+                        </li>
+                        <li>
+                            <span>Potássio</span>
+                            <span>421mg</span>
+                        </li>
                     </ul>
                 </div>
                 <div class="produto-acoes">
@@ -81,7 +100,34 @@
         <section class="produtos-relacionados">
             <h2>Produtos Relacionados</h2>
             <div class="produtos-grid">
-                <!-- Preenchido via JavaScript -->
+                <!-- Produtos relacionados -->
+                <div class="produto-card" onclick="window.location.href='cenouras.html'">
+                    <img src="https://th.bing.com/th/id/OIP.SrVvQxl4XYkdpGiwxqlDdAHaHa?rs=1&pid=ImgDetMain" alt="Cenouras">
+                    <h3>Cenouras</h3>
+                    <p class="preco">R$ 5,90/kg</p>
+                    <button class="comprar-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        Ver Detalhes
+                    </button>
+                </div>
+                <div class="produto-card" onclick="window.location.href='tomates.html'">
+                    <img src="https://th.bing.com/th/id/OIP.XPXeInO68L49mOlW_1MdZwHaE7?rs=1&pid=ImgDetMain" alt="Tomates">
+                    <h3>Tomates</h3>
+                    <p class="preco">R$ 9,90/kg</p>
+                    <button class="comprar-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        Ver Detalhes
+                    </button>
+                </div>
+                <div class="produto-card" onclick="window.location.href='cebolas.html'">
+                    <img src="https://th.bing.com/th/id/OIP.fO7hM-eDkQXLlZGq8UtBiwHaEo?rs=1&pid=ImgDetMain" alt="Cebolas">
+                    <h3>Cebolas</h3>
+                    <p class="preco">R$ 4,90/kg</p>
+                    <button class="comprar-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        Ver Detalhes
+                    </button>
+                </div>
             </div>
         </section>
     </main>
@@ -128,16 +174,16 @@
             <div class="footer-section">
                 <h3>Categorias</h3>
                 <ul>
-                    <li><a href="#">Frutas Frescas</a></li>
-                    <li><a href="#">Frutas Secas</a></li>
-                    <li><a href="#">Kits Especiais</a></li>
-                    <li><a href="#">Ofertas</a></li>
+                    <li><a href="../produtos.html?categoria=frutas">Frutas Frescas</a></li>
+                    <li><a href="../produtos.html?categoria=legumes">Legumes</a></li>
+                    <li><a href="../produtos.html?categoria=verduras">Verduras</a></li>
+                    <li><a href="../produtos.html">Todos os Produtos</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>Informações</h3>
                 <ul>
-                    <li><a href="#">Sobre Nós</a></li>
+                    <li><a href="../sobre.html">Sobre Nós</a></li>
                     <li><a href="#">Política de Entrega</a></li>
                     <li><a href="#">Termos e Condições</a></li>
                     <li><a href="#">Política de Privacidade</a></li>
@@ -170,6 +216,36 @@
     </footer>
 
     <!-- Scripts -->
-    <script type="module" src="app/app.js"></script>
+    <script type="module" src="../app/app.js"></script>
+    
+    <!-- Script específico para a página do produto -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Adicionar evento para botões de quantidade
+            const quantidadeInput = document.getElementById('quantidade');
+            
+            document.querySelector('.quantidade-btn.diminuir').addEventListener('click', () => {
+                const valor = parseInt(quantidadeInput.value);
+                if (valor > 1) quantidadeInput.value = valor - 1;
+            });
+
+            document.querySelector('.quantidade-btn.aumentar').addEventListener('click', () => {
+                const valor = parseInt(quantidadeInput.value);
+                quantidadeInput.value = valor + 1;
+            });
+
+            // Adicionar evento para botão de compra
+            document.querySelector('.comprar-btn').addEventListener('click', () => {
+                const quantidade = parseInt(quantidadeInput.value);
+                const nomeProduto = 'Batatas';
+                const precoProduto = 6.90;
+                
+                // Usar a função adicionarAoCarrinho definida no script principal
+                for (let i = 0; i < quantidade; i++) {
+                    window.adicionarAoCarrinho(nomeProduto, precoProduto, 'kg');
+                }
+            });
+        });
+    </script>
 </body>
 </html> 

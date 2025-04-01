@@ -116,6 +116,29 @@
                 </div>
 
                 <div class="produto-card">
+                    <img src="https://th.bing.com/th/id/OIP.KcAlyW4W4Uh3saa4J9rotAHaHa?rs=1&pid=ImgDetMain" alt="Laranjas">
+                    <h3>Laranjas</h3>
+                    <p>Laranjas suculentas e ricas em vitamina C.</p>
+                    <div class="rating" data-avaliacao="5.0">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="preco">
+                        R$ 7,90
+                        <span class="unidade">/kg</span>
+                    </div>
+                    <div class="produto-acoes">
+                        <button class="comprar-btn" role="button" aria-label="Comprar Laranjas">Adicionar ao Carrinho</button>
+                        <button class="favorito-btn" aria-label="Adicionar aos favoritos">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="produto-card">
                     <img src="https://img.quizur.com/f/img605f9cc0c5aba4.57840816.jpg?lastEdited=1616878788" alt="Morangos">
                     <h3>Morangos</h3>
                     <p>Morangos frescos e doces, ricos em antioxidantes.</p>
@@ -487,14 +510,5 @@
 
     <!-- Scripts -->
     <script type="module" src="app/app.js"></script>
-    <script>
-        // Script para remover qualquer card de laranja que ainda possa existir
-        document.addEventListener('DOMContentLoaded', function() {
-            const laranjas = document.querySelector('div.produto-card img[alt="Laranjas"]');
-            if (laranjas) {
-                laranjas.closest('.produto-card').remove();
-            }
-        });
-    </script>
 </body>
 </html> 

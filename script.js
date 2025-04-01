@@ -636,34 +636,240 @@ const produtosDisponiveis = [
     {
         nome: "Maçãs Vermelhas",
         preco: "R$ 12,90",
-        imagem: "https://th.bing.com/th/id/OIP.DnBqF1misIba7yN3lja2fwHaHb?rs=1&pid=ImgDetMain",
-        descricao: "Maçãs vermelhas frescas e suculentas, colhidas diariamente."
+        imagem: "https://www.infoescola.com/wp-content/uploads/2021/09/maca-red-1102078_1920-1536x1017.jpg",
+        descricao: "Maçãs frescas e crocantes, ricas em fibras e vitaminas.",
+        categoria: "frutas",
+        avaliacao: 4.5
     },
     {
         nome: "Bananas Prata",
         preco: "R$ 8,90",
-        imagem: "https://th.bing.com/th/id/OIP.7w4kPAYPE_ecMisRzA1qJwAAAA?rs=1&pid=ImgDetMain",
-        descricao: "Bananas prata maduras e doces, perfeitas para consumo imediato."
+        imagem: "https://www.tastingtable.com/img/gallery/the-real-difference-between-bananas-and-baby-bananas/l-intro-1663622196.jpg",
+        descricao: "Bananas prata maduras e doces, perfeitas para consumo.",
+        categoria: "frutas",
+        avaliacao: 3.0
+    },
+    {
+        nome: "Laranjas",
+        preco: "R$ 7,90",
+        imagem: "https://th.bing.com/th/id/OIP.KcAlyW4W4Uh3saa4J9rotAHaHa?rs=1&pid=ImgDetMain",
+        descricao: "Laranjas suculentas e ricas em vitamina C.",
+        categoria: "frutas",
+        avaliacao: 5.0
     },
     {
         nome: "Morangos",
         preco: "R$ 15,90",
         imagem: "https://img.quizur.com/f/img605f9cc0c5aba4.57840816.jpg?lastEdited=1616878788",
-        descricao: "Morangos frescos e doces, colhidos na hora."
+        descricao: "Morangos frescos e doces, ricos em antioxidantes.",
+        categoria: "frutas",
+        avaliacao: 2.5
     },
     {
         nome: "Uvas",
-        preco: "R$ 14,90",
-        imagem: "https://th.bing.com/th/id/OIP.aJ3nuGpglx0SunU0C5FKAwHaEK?rs=1&pid=ImgDetMain",
-        descricao: "Uvas doces e suculentas, disponíveis em diferentes variedades."
+        preco: "R$ 18,90",
+        imagem: "https://www.ecestaticos.com/image/clipping/20d79ca06459672307da435a850b5285/temporada-de-uvas-tres-grandes-platos-que-puedes-cocinar-con-ellas.jpg",
+        descricao: "Uvas doces e sem sementes, perfeitas para consumo.",
+        categoria: "frutas",
+        avaliacao: 3.5
     },
     {
         nome: "Abacaxis",
-        preco: "R$ 16,90",
-        imagem: "https://th.bing.com/th/id/OIP.04Hxw701P8-1cR-o_Gew5wHaEK?rs=1&pid=ImgDetMain",
-        descricao: "Abacaxis maduros e doces, prontos para consumo."
+        preco: "R$ 12,90",
+        imagem: "https://th.bing.com/th/id/OIP.AeEePlRt-a59rneF9Cd4yAHaFj?rs=1&pid=ImgDetMain",
+        descricao: "Abacaxis maduros e doces, prontos para consumo.",
+        categoria: "frutas",
+        avaliacao: 4.0
+    },
+    {
+        nome: "Cenouras",
+        preco: "R$ 5,90",
+        imagem: "https://www.infoescola.com/wp-content/uploads/2010/08/cenoura_250834906.jpg",
+        descricao: "Cenouras frescas e crocantes, ricas em vitamina A.",
+        categoria: "legumes",
+        avaliacao: 4.2
+    },
+    {
+        nome: "Tomates",
+        preco: "R$ 9,90",
+        imagem: "https://th.bing.com/th/id/R.6d6c5f1327c4294e1534b4a91f35dd78?rik=Gh1tkiq8dhKRqw&pid=ImgRaw&r=0",
+        descricao: "Tomates maduros e suculentos, perfeitos para saladas.",
+        categoria: "legumes",
+        avaliacao: 3.7
+    },
+    {
+        nome: "Batatas",
+        preco: "R$ 6,90",
+        imagem: "https://revistasaboresdosul.com.br/wp-content/uploads/2020/06/batatas-2.jpg",
+        descricao: "Batatas selecionadas, perfeitas para diversos preparos.",
+        categoria: "legumes",
+        avaliacao: 4.3
+    },
+    {
+        nome: "Beterrabas",
+        preco: "R$ 7,90",
+        imagem: "https://th.bing.com/th/id/OIP.kSOkRyQbG1PfjvOOGkQzZQHaE6?rs=1&pid=ImgDetMain",
+        descricao: "Beterrabas frescas e suculentas, ricas em nutrientes.",
+        categoria: "legumes",
+        avaliacao: 3.8
+    },
+    {
+        nome: "Alface Crespa",
+        preco: "R$ 3,90",
+        imagem: "https://th.bing.com/th/id/OIP.hoJy8VJuV0kBWl6Xi9uAxQHaE8?rs=1&pid=ImgDetMain",
+        descricao: "Alface crespa fresca e crocante, colhida no dia.",
+        categoria: "verduras",
+        avaliacao: 4.8
+    },
+    {
+        nome: "Couve",
+        preco: "R$ 4,50",
+        imagem: "https://th.bing.com/th/id/R.94f51587d5ea2a093619cbc63cddad20?rik=ydhsBmdwpBqccQ&riu=http%3a%2f%2f4.bp.blogspot.com%2f-vhdGJ5-KIiE%2fUTd7DXI_7fI%2fAAAAAAAATBk%2fWM4PVCnduv4%2fs1600%2fcouve.jpg&ehk=1vY04UejPQOlbI6z4%2b573tQmM%2bguw6rlZINmZy9Bnfc%3d&risl=&pid=ImgRaw&r=0",
+        descricao: "Couve fresca e tenra, rica em vitaminas e minerais.",
+        categoria: "verduras",
+        avaliacao: 4.1
+    },
+    {
+        nome: "Espinafre",
+        preco: "R$ 5,90",
+        imagem: "https://www.infoescola.com/wp-content/uploads/2010/02/espinafre_224442694.jpg",
+        descricao: "Espinafre fresco e nutritivo, fonte de ferro.",
+        categoria: "verduras",
+        avaliacao: 3.9
     }
 ];
+
+// Função para filtrar e ordenar produtos
+function filtrarEOrdenarProdutos() {
+    const categoria = document.getElementById('categoria').value;
+    const faixaPreco = document.getElementById('preco').value;
+    const ordenacao = document.getElementById('ordenacao').value;
+
+    let produtosFiltrados = [...produtosDisponiveis];
+
+    // Filtrar por categoria
+    if (categoria !== 'todos') {
+        produtosFiltrados = produtosFiltrados.filter(produto => produto.categoria === categoria);
+    }
+
+    // Filtrar por faixa de preço
+    if (faixaPreco !== 'todos') {
+        const [min, max] = faixaPreco.split('-').map(valor => parseFloat(valor));
+        produtosFiltrados = produtosFiltrados.filter(produto => {
+            const preco = parseFloat(produto.preco.replace('R$ ', '').replace(',', '.'));
+            if (max) {
+                return preco >= min && preco <= max;
+            } else {
+                return preco >= min;
+            }
+        });
+    }
+
+    // Ordenar produtos
+    produtosFiltrados.sort((a, b) => {
+        const precoA = parseFloat(a.preco.replace('R$ ', '').replace(',', '.'));
+        const precoB = parseFloat(b.preco.replace('R$ ', '').replace(',', '.'));
+
+        switch (ordenacao) {
+            case 'nome':
+                return a.nome.localeCompare(b.nome);
+            case 'preco-asc':
+                return precoA - precoB;
+            case 'preco-desc':
+                return precoB - precoA;
+            case 'avaliacao':
+                return (b.avaliacao || 0) - (a.avaliacao || 0);
+            default:
+                return 0;
+        }
+    });
+
+    // Atualizar a exibição dos produtos
+    const produtosGrid = document.querySelector('.produtos-grid');
+    if (produtosGrid) {
+        produtosGrid.innerHTML = '';
+        produtosFiltrados.forEach(produto => {
+            // Definir uma avaliação para cada produto se não existir
+            if (!produto.avaliacao) {
+                switch (produto.nome) {
+                    case "Maçãs Vermelhas": produto.avaliacao = 4.5; break;
+                    case "Bananas Prata": produto.avaliacao = 3.0; break;
+                    case "Laranjas": produto.avaliacao = 5.0; break;
+                    case "Morangos": produto.avaliacao = 2.5; break;
+                    case "Uvas": produto.avaliacao = 3.5; break;
+                    case "Abacaxis": produto.avaliacao = 4.0; break;
+                    default: produto.avaliacao = Math.floor(Math.random() * 4) + 1 + (Math.random() > 0.5 ? 0.5 : 0);
+                }
+            }
+            
+            // Gerar HTML das estrelas com base na avaliação
+            let starsHtml = '';
+            const avaliacao = produto.avaliacao;
+            for (let i = 1; i <= 5; i++) {
+                if (i <= Math.floor(avaliacao)) {
+                    starsHtml += '<i class="fas fa-star"></i>';
+                } else if (i - avaliacao < 1 && i - avaliacao > 0) {
+                    starsHtml += '<i class="fas fa-star-half-alt"></i>';
+                } else {
+                    starsHtml += '<i class="far fa-star"></i>';
+                }
+            }
+            
+            const card = document.createElement('div');
+            card.className = 'produto-card';
+            card.innerHTML = `
+                <img src="${produto.imagem}" alt="${produto.nome}">
+                <h3 class="produto-titulo">${produto.nome}</h3>
+                <p>${produto.descricao}</p>
+                <div class="rating" data-avaliacao="${produto.avaliacao}">
+                    ${starsHtml}
+                </div>
+                <div class="preco">
+                    ${produto.preco}
+                    <span class="unidade">/kg</span>
+                </div>
+                <div class="produto-acoes">
+                    <button class="comprar-btn" role="button" aria-label="Comprar ${produto.nome}">Adicionar ao Carrinho</button>
+                    <button class="favorito-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+            `;
+            produtosGrid.appendChild(card);
+            
+            // Adicionar evento de clique para o card
+            card.addEventListener('click', (e) => {
+                if (!e.target.classList.contains('comprar-btn') && !e.target.classList.contains('favorito-btn') && !e.target.closest('.favorito-btn')) {
+                    redirecionarParaDetalhes(produto.nome);
+                }
+            });
+            
+            // Adicionar evento para o botão de compra
+            const comprarBtn = card.querySelector('.comprar-btn');
+            comprarBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const precoNumerico = parseFloat(produto.preco.replace('R$ ', '').replace(',', '.'));
+                adicionarAoCarrinho(produto.nome, precoNumerico, 'kg');
+            });
+        });
+    }
+}
+
+// Adicionar event listeners para os filtros
+document.addEventListener('DOMContentLoaded', () => {
+    const categoria = document.getElementById('categoria');
+    const faixaPreco = document.getElementById('preco');
+    const ordenacao = document.getElementById('ordenacao');
+
+    if (categoria && faixaPreco && ordenacao) {
+        categoria.addEventListener('change', filtrarEOrdenarProdutos);
+        faixaPreco.addEventListener('change', filtrarEOrdenarProdutos);
+        ordenacao.addEventListener('change', filtrarEOrdenarProdutos);
+
+        // Carregar produtos iniciais
+        filtrarEOrdenarProdutos();
+    }
+});
 
 // Função para realizar busca dinâmica
 function realizarBuscaDinamica(termo) {
@@ -682,7 +888,7 @@ function realizarBuscaDinamica(termo) {
 
     if (resultados.length > 0) {
         searchResults.innerHTML = resultados.map(produto => `
-            <div class="search-result-item">
+            <div class="search-result-item" data-produto="${produto.nome}">
                 <img src="${produto.imagem}" alt="${produto.nome}">
                 <div class="result-info">
                     <div class="result-name">${produto.nome}</div>
@@ -690,6 +896,15 @@ function realizarBuscaDinamica(termo) {
                 </div>
             </div>
         `).join('');
+        
+        // Adicionar eventos de clique aos resultados
+        document.querySelectorAll('.search-result-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const nomeProduto = item.getAttribute('data-produto');
+                redirecionarParaDetalhes(nomeProduto);
+            });
+        });
+        
         searchResults.classList.add('active');
     } else {
         searchResults.innerHTML = '<div class="search-result-item">Nenhum produto encontrado</div>';
@@ -785,8 +1000,8 @@ const produtosDetalhados = {
     "Bananas Prata": {
         nome: "Bananas Prata",
         preco: 8.90,
-        imagem: "https://th.bing.com/th/id/OIP.7w4kPAYPE_ecMisRzA1qJwAAAA?rs=1&pid=ImgDetMain",
-        descricao: "Bananas prata maduras e doces, perfeitas para consumo imediato. Cultivadas em solo rico em nutrientes, nossas bananas são fonte natural de energia e sabor. Excelentes para lanches, vitaminas ou sobremesas.",
+        imagem: "https://www.tastingtable.com/img/gallery/the-real-difference-between-bananas-and-baby-bananas/l-intro-1663622196.jpg",
+        descricao: "Bananas prata maduras e doces, perfeitas para consumo.",
         categoria: "frutas",
         nutricional: [
             { nome: "Calorias", valor: "89 kcal" },
@@ -802,7 +1017,7 @@ const produtosDetalhados = {
         nome: "Morangos",
         preco: 15.90,
         imagem: "https://img.quizur.com/f/img605f9cc0c5aba4.57840816.jpg?lastEdited=1616878788",
-        descricao: "Morangos frescos e doces, colhidos na hora. Selecionados a dedo para garantir a melhor qualidade. Perfeitos para consumo in natura, sobremesas ou sucos.",
+        descricao: "Morangos frescos e doces, ricos em antioxidantes.",
         categoria: "frutas",
         nutricional: [
             { nome: "Calorias", valor: "32 kcal" },
@@ -813,12 +1028,200 @@ const produtosDetalhados = {
         ],
         avaliacao: 4.7,
         avaliacoes: 98
+    },
+    "Laranjas": {
+        nome: "Laranjas",
+        preco: 7.90,
+        imagem: "https://th.bing.com/th/id/OIP.KcAlyW4W4Uh3saa4J9rotAHaHa?rs=1&pid=ImgDetMain",
+        descricao: "Laranjas suculentas e ricas em vitamina C. Cultivadas em pomares ensolarados, nossas laranjas são colhidas no ponto ideal de maturação para garantir o melhor sabor e qualidade. Perfeitas para sucos naturais ou consumo in natura.",
+        categoria: "frutas",
+        nutricional: [
+            { nome: "Calorias", valor: "43 kcal" },
+            { nome: "Carboidratos", valor: "8.3g" },
+            { nome: "Proteínas", valor: "1g" },
+            { nome: "Fibras", valor: "2.4g" },
+            { nome: "Vitamina C", valor: "53.2mg" }
+        ],
+        avaliacao: 5.0,
+        avaliacoes: 143
+    },
+    "Uvas": {
+        nome: "Uvas",
+        preco: 18.90,
+        imagem: "https://www.ecestaticos.com/image/clipping/20d79ca06459672307da435a850b5285/temporada-de-uvas-tres-grandes-platos-que-puedes-cocinar-con-ellas.jpg",
+        descricao: "Uvas doces e sem sementes, perfeitas para consumo. Selecionadas a dedo, nossas uvas são cultivadas com cuidado para garantir sabor e qualidade. Ideais para consumo in natura, sobremesas ou acompanhamentos.",
+        categoria: "frutas",
+        nutricional: [
+            { nome: "Calorias", valor: "67 kcal" },
+            { nome: "Carboidratos", valor: "17.2g" },
+            { nome: "Proteínas", valor: "0.6g" },
+            { nome: "Fibras", valor: "0.9g" },
+            { nome: "Vitamina C", valor: "3.2mg" }
+        ],
+        avaliacao: 4.6,
+        avaliacoes: 118
+    },
+    "Abacaxis": {
+        nome: "Abacaxis",
+        preco: 12.90,
+        imagem: "https://th.bing.com/th/id/OIP.AeEePlRt-a59rneF9Cd4yAHaFj?rs=1&pid=ImgDetMain",
+        descricao: "Abacaxis maduros e doces, prontos para consumo. Cultivados em solo rico, nossos abacaxis são fonte de sabor e nutrientes. Perfeitos para consumo in natura, sucos ou sobremesas.",
+        categoria: "frutas",
+        nutricional: [
+            { nome: "Calorias", valor: "50 kcal" },
+            { nome: "Carboidratos", valor: "13.1g" },
+            { nome: "Proteínas", valor: "0.5g" },
+            { nome: "Fibras", valor: "1.4g" },
+            { nome: "Vitamina C", valor: "47.8mg" }
+        ],
+        avaliacao: 4.8,
+        avaliacoes: 92
+    },
+    "Cenouras": {
+        nome: "Cenouras",
+        preco: 5.90,
+        imagem: "https://www.infoescola.com/wp-content/uploads/2010/08/cenoura_250834906.jpg",
+        descricao: "Cenouras frescas e crocantes, ricas em vitamina A. Cultivadas com cuidado, nossas cenouras são colhidas no ponto certo para garantir sabor e qualidade. Excelentes para saladas, sucos ou pratos quentes.",
+        categoria: "legumes",
+        nutricional: [
+            { nome: "Calorias", valor: "41 kcal" },
+            { nome: "Carboidratos", valor: "9.6g" },
+            { nome: "Proteínas", valor: "0.9g" },
+            { nome: "Fibras", valor: "2.8g" },
+            { nome: "Vitamina A", valor: "835µg" }
+        ],
+        avaliacao: 4.2,
+        avaliacoes: 78
+    },
+    "Tomates": {
+        nome: "Tomates",
+        preco: 9.90,
+        imagem: "https://th.bing.com/th/id/R.6d6c5f1327c4294e1534b4a91f35dd78?rik=Gh1tkiq8dhKRqw&pid=ImgRaw&r=0",
+        descricao: "Tomates maduros e suculentos, perfeitos para saladas. Cultivados com técnicas sustentáveis, nossos tomates são colhidos no ponto certo de maturação. Excelentes para saladas, molhos ou sanduíches.",
+        categoria: "legumes",
+        nutricional: [
+            { nome: "Calorias", valor: "18 kcal" },
+            { nome: "Carboidratos", valor: "3.9g" },
+            { nome: "Proteínas", valor: "0.9g" },
+            { nome: "Fibras", valor: "1.2g" },
+            { nome: "Vitamina C", valor: "13.7mg" }
+        ],
+        avaliacao: 4.5,
+        avaliacoes: 83
+    },
+    "Batatas": {
+        nome: "Batatas",
+        preco: 6.90,
+        imagem: "https://revistasaboresdosul.com.br/wp-content/uploads/2020/06/batatas-2.jpg",
+        descricao: "Batatas selecionadas, perfeitas para diversos preparos. Nossas batatas são cultivadas em solo fértil para garantir sabor e textura ideais. Versáteis para fritar, assar ou cozinhar.",
+        categoria: "legumes",
+        nutricional: [
+            { nome: "Calorias", valor: "77 kcal" },
+            { nome: "Carboidratos", valor: "17.5g" },
+            { nome: "Proteínas", valor: "2g" },
+            { nome: "Fibras", valor: "2.2g" },
+            { nome: "Potássio", valor: "421mg" }
+        ],
+        avaliacao: 4.3,
+        avaliacoes: 105
+    },
+    "Beterrabas": {
+        nome: "Beterrabas",
+        preco: 7.90,
+        imagem: "https://th.bing.com/th/id/OIP.kSOkRyQbG1PfjvOOGkQzZQHaE6?rs=1&pid=ImgDetMain",
+        descricao: "Beterrabas frescas e suculentas, ricas em nutrientes. Cultivadas com amor, nossas beterrabas são colhidas no ponto ideal. Excelentes para saladas, sucos ou pratos quentes.",
+        categoria: "legumes",
+        nutricional: [
+            { nome: "Calorias", valor: "43 kcal" },
+            { nome: "Carboidratos", valor: "9.6g" },
+            { nome: "Proteínas", valor: "1.6g" },
+            { nome: "Fibras", valor: "2.8g" },
+            { nome: "Folato", valor: "109µg" }
+        ],
+        avaliacao: 4.0,
+        avaliacoes: 67
+    },
+    "Alface Crespa": {
+        nome: "Alface Crespa",
+        preco: 3.90,
+        imagem: "https://th.bing.com/th/id/OIP.hoJy8VJuV0kBWl6Xi9uAxQHaE8?rs=1&pid=ImgDetMain",
+        descricao: "Alface crespa fresca e crocante, colhida no dia. Nossa alface é cultivada com técnicas sustentáveis para garantir sabor e frescor. Perfeita para saladas, sanduíches ou acompanhamentos.",
+        categoria: "verduras",
+        nutricional: [
+            { nome: "Calorias", valor: "15 kcal" },
+            { nome: "Carboidratos", valor: "2.9g" },
+            { nome: "Proteínas", valor: "1.4g" },
+            { nome: "Fibras", valor: "1.3g" },
+            { nome: "Vitamina A", valor: "166µg" }
+        ],
+        avaliacao: 4.7,
+        avaliacoes: 89
+    },
+    "Couve": {
+        nome: "Couve",
+        preco: 4.50,
+        imagem: "https://th.bing.com/th/id/R.94f51587d5ea2a093619cbc63cddad20?rik=ydhsBmdwpBqccQ&riu=http%3a%2f%2f4.bp.blogspot.com%2f-vhdGJ5-KIiE%2fUTd7DXI_7fI%2fAAAAAAAATBk%2fWM4PVCnduv4%2fs1600%2fcouve.jpg&ehk=1vY04UejPQOlbI6z4%2b573tQmM%2bguw6rlZINmZy9Bnfc%3d&risl=&pid=ImgRaw&r=0",
+        descricao: "Couve fresca e tenra, rica em vitaminas e minerais. Cultivada com cuidado, nossa couve é colhida diariamente para garantir frescor e qualidade. Excelente para saladas, refogados ou sucos verdes.",
+        categoria: "verduras",
+        nutricional: [
+            { nome: "Calorias", valor: "49 kcal" },
+            { nome: "Carboidratos", valor: "8.8g" },
+            { nome: "Proteínas", valor: "3.3g" },
+            { nome: "Fibras", valor: "3.6g" },
+            { nome: "Vitamina K", valor: "817µg" }
+        ],
+        avaliacao: 4.4,
+        avaliacoes: 72
+    },
+    "Espinafre": {
+        nome: "Espinafre",
+        preco: 5.90,
+        imagem: "https://www.infoescola.com/wp-content/uploads/2010/02/espinafre_224442694.jpg",
+        descricao: "Espinafre fresco e nutritivo, fonte de ferro. Cultivado com métodos sustentáveis, nosso espinafre é rico em nutrientes essenciais. Ideal para saladas, refogados ou sucos verdes.",
+        categoria: "verduras",
+        nutricional: [
+            { nome: "Calorias", valor: "23 kcal" },
+            { nome: "Carboidratos", valor: "3.6g" },
+            { nome: "Proteínas", valor: "2.9g" },
+            { nome: "Fibras", valor: "2.2g" },
+            { nome: "Ferro", valor: "2.7mg" }
+        ],
+        avaliacao: 4.2,
+        avaliacoes: 63
     }
 };
 
 // Função para redirecionar para a página de detalhes do produto
-function redirecionarParaDetalhes(nome) {
-    window.location.href = `produto.html?produto=${encodeURIComponent(nome)}`;
+function redirecionarParaDetalhes(produto) {
+    // Normalizar o nome do produto (remover acentos e substituir espaços por hífens)
+    const nomeProdutoNormalizado = produto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/\s+/g, '-');
+    
+    // Lista de produtos que têm páginas específicas
+    const paginasEspecificas = [
+        'macas-vermelhas',
+        'bananas-prata',
+        'morangos',
+        'laranjas',
+        'abacaxis',
+        'uvas',
+        'cenouras',
+        'tomates',
+        'batatas',
+        'alface-crespa',
+        'cebolas',
+        'pepinos',
+        'beterrabas',
+        'couve',
+        'espinafre'
+    ];
+    
+    // Verificar se o produto tem uma página específica
+    if (paginasEspecificas.includes(nomeProdutoNormalizado)) {
+        window.location.href = `produtos/${nomeProdutoNormalizado}.html`;
+    } else {
+        // Redirecionar para a página genérica de produto com o nome do produto como parâmetro
+        window.location.href = `produto.html?produto=${encodeURIComponent(produto)}`;
+    }
 }
 
 // Função para carregar os detalhes do produto na página de produto
@@ -871,7 +1274,7 @@ function carregarDetalhesProduto() {
     produtosGrid.innerHTML = produtosRelacionados.map(p => `
         <div class="produto-card" onclick="redirecionarParaDetalhes('${p.nome}')">
             <img src="${p.imagem}" alt="${p.nome}">
-            <h3>${p.nome}</h3>
+            <h3 class="produto-titulo">${p.nome}</h3>
             <p class="preco">R$ ${p.preco.toFixed(2)}/kg</p>
             <button class="comprar-btn">
                 <i class="fas fa-shopping-cart"></i>
@@ -917,4 +1320,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Carregar detalhes do produto se estiver na página de produto
     carregarDetalhesProduto();
+});
+
+// Adiciona evento de clique no logo para redirecionar para a página inicial
+document.querySelector('.logo').addEventListener('click', () => {
+    window.location.href = 'index.html';
 }); 

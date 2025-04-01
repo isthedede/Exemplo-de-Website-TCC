@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalhes do Produto - Frutas Frescas</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Morangos - Frutas Frescas</title>
+    <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -21,12 +21,12 @@
                 <div class="search-results"></div>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="produtos.html">Produtos</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="contato.html">Contato</a></li>
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="../produtos.html">Produtos</a></li>
+                <li><a href="../sobre.html">Sobre</a></li>
+                <li><a href="../contato.html">Contato</a></li>
             </ul>
-            <a href="carrinho.html" class="carrinho-btn" aria-label="Abrir carrinho">
+            <a href="../carrinho.html" class="carrinho-btn" aria-label="Abrir carrinho">
                 <i class="fas fa-shopping-cart"></i>
                 <span class="carrinho-contador">0</span>
             </a>
@@ -36,12 +36,12 @@
     <main class="produto-detalhes">
         <div class="produto-container">
             <div class="produto-imagem">
-                <img src="" alt="" id="produto-img">
+                <img src="https://img.quizur.com/f/img605f9cc0c5aba4.57840816.jpg?lastEdited=1616878788" alt="Morangos" id="produto-img">
             </div>
             <div class="produto-info">
-                <h2 id="produto-nome"></h2>
+                <h2 id="produto-nome">Morangos</h2>
                 <div class="produto-preco">
-                    <span class="preco" id="produto-preco"></span>
+                    <span class="preco" id="produto-preco">R$ 15,90</span>
                     <span class="unidade">/kg</span>
                 </div>
                 <div class="produto-avaliacao">
@@ -52,16 +52,35 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star-half-alt"></i>
                     </div>
-                    <span class="avaliacoes-count">(127 avaliações)</span>
+                    <span class="avaliacoes-count">(98 avaliações)</span>
                 </div>
                 <div class="produto-descricao">
                     <h3>Descrição</h3>
-                    <p id="produto-descricao"></p>
+                    <p id="produto-descricao">Morangos frescos e doces, colhidos na hora. Selecionados a dedo para garantir a melhor qualidade. Perfeitos para consumo in natura, sobremesas ou sucos.</p>
                 </div>
                 <div class="produto-nutricional">
                     <h3>Informações Nutricionais</h3>
                     <ul id="produto-nutricional">
-                        <!-- Preenchido via JavaScript -->
+                        <li>
+                            <span>Calorias</span>
+                            <span>32 kcal</span>
+                        </li>
+                        <li>
+                            <span>Carboidratos</span>
+                            <span>7.7g</span>
+                        </li>
+                        <li>
+                            <span>Proteínas</span>
+                            <span>0.7g</span>
+                        </li>
+                        <li>
+                            <span>Fibras</span>
+                            <span>2g</span>
+                        </li>
+                        <li>
+                            <span>Vitamina C</span>
+                            <span>58.8mg</span>
+                        </li>
                     </ul>
                 </div>
                 <div class="produto-acoes">
@@ -81,7 +100,34 @@
         <section class="produtos-relacionados">
             <h2>Produtos Relacionados</h2>
             <div class="produtos-grid">
-                <!-- Preenchido via JavaScript -->
+                <!-- Produtos relacionados -->
+                <div class="produto-card" onclick="window.location.href='macas-vermelhas.html'">
+                    <img src="https://th.bing.com/th/id/OIP.DnBqF1misIba7yN3lja2fwHaHb?rs=1&pid=ImgDetMain" alt="Maçãs Vermelhas">
+                    <h3>Maçãs Vermelhas</h3>
+                    <p class="preco">R$ 12,90/kg</p>
+                    <button class="comprar-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        Ver Detalhes
+                    </button>
+                </div>
+                <div class="produto-card" onclick="window.location.href='bananas-prata.html'">
+                    <img src="https://www.tastingtable.com/img/gallery/the-real-difference-between-bananas-and-baby-bananas/l-intro-1663622196.jpg" alt="Bananas Prata">
+                    <h3>Bananas Prata</h3>
+                    <p class="preco">R$ 8,90/kg</p>
+                    <button class="comprar-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        Ver Detalhes
+                    </button>
+                </div>
+                <div class="produto-card" onclick="window.location.href='../produto.html?produto=Uvas'">
+                    <img src="https://th.bing.com/th/id/OIP.aJ3nuGpglx0SunU0C5FKAwHaEK?rs=1&pid=ImgDetMain" alt="Uvas">
+                    <h3>Uvas</h3>
+                    <p class="preco">R$ 18,90/kg</p>
+                    <button class="comprar-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        Ver Detalhes
+                    </button>
+                </div>
             </div>
         </section>
     </main>
@@ -128,16 +174,16 @@
             <div class="footer-section">
                 <h3>Categorias</h3>
                 <ul>
-                    <li><a href="#">Frutas Frescas</a></li>
-                    <li><a href="#">Frutas Secas</a></li>
-                    <li><a href="#">Kits Especiais</a></li>
-                    <li><a href="#">Ofertas</a></li>
+                    <li><a href="../produtos.html?categoria=frutas">Frutas Frescas</a></li>
+                    <li><a href="../produtos.html?categoria=legumes">Legumes</a></li>
+                    <li><a href="../produtos.html?categoria=verduras">Verduras</a></li>
+                    <li><a href="../produtos.html">Todos os Produtos</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>Informações</h3>
                 <ul>
-                    <li><a href="#">Sobre Nós</a></li>
+                    <li><a href="../sobre.html">Sobre Nós</a></li>
                     <li><a href="#">Política de Entrega</a></li>
                     <li><a href="#">Termos e Condições</a></li>
                     <li><a href="#">Política de Privacidade</a></li>
@@ -170,6 +216,36 @@
     </footer>
 
     <!-- Scripts -->
-    <script type="module" src="app/app.js"></script>
+    <script type="module" src="../app/app.js"></script>
+    
+    <!-- Script específico para a página do produto -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Adicionar evento para botões de quantidade
+            const quantidadeInput = document.getElementById('quantidade');
+            
+            document.querySelector('.quantidade-btn.diminuir').addEventListener('click', () => {
+                const valor = parseInt(quantidadeInput.value);
+                if (valor > 1) quantidadeInput.value = valor - 1;
+            });
+
+            document.querySelector('.quantidade-btn.aumentar').addEventListener('click', () => {
+                const valor = parseInt(quantidadeInput.value);
+                quantidadeInput.value = valor + 1;
+            });
+
+            // Adicionar evento para botão de compra
+            document.querySelector('.comprar-btn').addEventListener('click', () => {
+                const quantidade = parseInt(quantidadeInput.value);
+                const nomeProduto = 'Morangos';
+                const precoProduto = 15.90;
+                
+                // Usar a função adicionarAoCarrinho definida no script principal
+                for (let i = 0; i < quantidade; i++) {
+                    window.adicionarAoCarrinho(nomeProduto, precoProduto, 'kg');
+                }
+            });
+        });
+    </script>
 </body>
 </html> 
