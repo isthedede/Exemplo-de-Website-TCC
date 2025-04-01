@@ -2,7 +2,7 @@
 
 Este é um projeto de website de e-commerce desenvolvido para a disciplina de Trabalho de Conclusão de Curso (TCC) da FATEC. O projeto consiste em uma plataforma online para venda de frutas frescas, oferecendo uma experiência de compra intuitiva e amigável para os usuários.
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - HTML5
 - CSS3
@@ -10,7 +10,7 @@ Este é um projeto de website de e-commerce desenvolvido para a disciplina de Tr
 - Python (Flask)
 - Font Awesome para ícones
 
-## 📋 Funcionalidades
+## Funcionalidades
 
 - [x] Página inicial com destaque para produtos
 - [x] Catálogo de produtos com filtros
@@ -22,7 +22,7 @@ Este é um projeto de website de e-commerce desenvolvido para a disciplina de Tr
 - [x] Design responsivo
 - [x] Interface acessível
 
-## 🚀 Como Executar o Projeto
+## Como Executar o Projeto
 
 1. Clone o repositório:
 ```bash
@@ -44,7 +44,7 @@ python app.py
 http://localhost:5000
 ```
 
-## 📁 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 Exemplo-de-Website-TCC/
@@ -61,24 +61,15 @@ Exemplo-de-Website-TCC/
 └── README.md          # Este arquivo
 ```
 
-## 👥 Autores
+## Autores
 
-- André Silva - Desenvolvedor Principal
+- André Toyama - Desenvolvedor Principal
+- Lucas Carita - Desenvolvedor Principal
 
-## 📄 Licença
+## Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-## 📞 Contato
+## Contato
 
-Para mais informações sobre o projeto, entre em contato através do email: contato@frutas.com
-
-## 🔄 Atualizações Recentes
-
-- [Data: DD/MM/AAAA] - Commit inicial do projeto
-- [Data: DD/MM/AAAA] - Adição do sistema de carrinho
-- [Data: DD/MM/AAAA] - Implementação da página de produtos
-- [Data: DD/MM/AAAA] - Criação do README.md
-
----
-Desenvolvido com ❤️ para o TCC da FATEC 
+Para mais informações sobre o projeto, entre em contato através do email: andreluiz.toyama@gmail.com 
