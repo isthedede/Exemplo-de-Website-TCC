@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frutas Frescas - Página Inicial</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header role="banner">
+        <nav role="navigation" aria-label="Menu principal">
+            <div class="logo">
+                <h1>Frutas Frescas</h1>
+            </div>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Buscar produtos..." aria-label="Buscar produtos">
+                <button class="search-button" aria-label="Buscar">
+                    <i class="fas fa-search"></i>
+                </button>
+                <div class="search-results">
+                    <!-- Resultados da busca serão inseridos aqui dinamicamente -->
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" aria-label="Página inicial">Início</a></li>
+                <li><a href="produtos.html" aria-label="Ver produtos">Produtos</a></li>
+                <li><a href="sobre.html" aria-label="Sobre nós">Sobre</a></li>
+                <li><a href="contato.html" aria-label="Contato">Contato</a></li>
+            </ul>
+            <a href="carrinho.html" class="carrinho-btn" aria-label="Abrir carrinho">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="carrinho-contador">0</span>
+            </a>
+        </nav>
+    </header>
+
+    <main role="main">
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <h2>Frutas Frescas e Naturais</h2>
+                <p>As melhores frutas selecionadas diretamente dos produtores para sua mesa</p>
+                <a href="produtos.html" class="cta-button">Ver Produtos</a>
+            </div>
+        </section>
+
+        <section class="informacoes">
+            <h2>Por que escolher nossos produtos?</h2>
+            <div class="informacoes-grid">
+                <div class="info-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3>100% Orgânicos</h3>
+                    <p>Nossas frutas são cultivadas sem agrotóxicos, garantindo mais saúde e sabor.</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-truck"></i>
+                    <h3>Entrega Rápida</h3>
+                    <p>Entregamos em até 24 horas após a colheita, mantendo a frescor das frutas.</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Qualidade Garantida</h3>
+                    <p>Rigoroso controle de qualidade para selecionar apenas as melhores frutas.</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Satisfação Garantida</h3>
+                    <p>Se não ficar satisfeito, devolvemos seu dinheiro sem questionamentos.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="newsletter">
+            <div class="newsletter-content">
+                <h2>Receba nossas novidades</h2>
+                <p>Cadastre-se para receber ofertas exclusivas e dicas de alimentação saudável.</p>
+                <form class="newsletter-form">
+                    <div class="form-group">
+                        <input type="email" placeholder="Seu melhor e-mail" required>
+                        <button type="submit" class="submit-btn">Cadastrar</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="produtos-destaque">
+            <h2>Produtos em Destaque</h2>
+            <div class="produtos-grid">
+                <div class="produto-card">
+                    <img src="https://th.bing.com/th/id/OIP.DnBqF1misIba7yN3lja2fwHaHb?rs=1&pid=ImgDetMain" alt="Maçãs Vermelhas">
+                    <h3>Maçãs Vermelhas</h3>
+                    <p class="preco">R$ 12,90/kg</p>
+                    <button class="comprar-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+                <div class="produto-card">
+                    <img src="https://th.bing.com/th/id/OIP.7w4kPAYPE_ecMisRzA1qJwAAAA?rs=1&pid=ImgDetMain" alt="Bananas Prata">
+                    <h3>Bananas Prata</h3>
+                    <p class="preco">R$ 8,90/kg</p>
+                    <button class="comprar-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+                <div class="produto-card">
+                    <img src="https://img.quizur.com/f/img605f9cc0c5aba4.57840816.jpg?lastEdited=1616878788" alt="Morangos">
+                    <h3>Morangos</h3>
+                    <p class="preco">R$ 15,90/kg</p>
+                    <button class="comprar-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>CATEGORIAS</h3>
+                <ul>
+                    <li><a href="#">LANÇAMENTOS</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>INFORMAÇÃO</h3>
+                <ul>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="sobre.html">Quem somos?</a></li>
+                    <li><a href="#">Política de Trocas & Devoluções</a></li>
+                    <li><a href="#">Termos de Uso</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>ENTRE EM CONTATO</h3>
+                <ul>
+                    <li>5511987654321</li>
+                    <li>+55 11 91234-5678</li>
+                    <li>contato@frutas.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Frutas Frescas. Todos os direitos reservados.</p>
+            <div class="payment-methods">
+                <img src="https://cdn.icon-icons.com/icons2/2341/PNG/512/visa_payment_method_card_icon_142729.png" alt="Visa" height="30">
+                <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mastercard@2x.png" alt="Mastercard" height="30">
+                <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/amex@2x.png" alt="American Express" height="30">
+                <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/br/elo@2x.png" alt="Elo" height="30">
+                <img src="https://cdn.icon-icons.com/icons2/2341/PNG/512/hipercard_payment_method_card_icon_142739.png" alt="Hipercard" height="30">
+                <img src="https://logospng.org/download/pix/logo-pix-icone-512.png" alt="PIX" height="30">
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal do Carrinho -->
+    <div id="carrinhoModal" class="carrinho-modal" aria-hidden="true">
+        <div class="carrinho-conteudo">
+            <div class="carrinho-header">
+                <h2>Seu Carrinho</h2>
+                <button class="fechar-carrinho" aria-label="Fechar carrinho">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="carrinho-items">
+                <!-- Items do carrinho serão inseridos aqui dinamicamente -->
+            </div>
+            <div class="carrinho-total">
+                <div class="carrinho-resumo">
+                    <h3>Resumo do Pedido</h3>
+                    <div class="resumo-item">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">R$ 0,00</span>
+                    </div>
+                    <div class="resumo-item">
+                        <span>Desconto:</span>
+                        <span id="desconto">R$ 0,00</span>
+                    </div>
+                    <div class="resumo-item total">
+                        <span>Total:</span>
+                        <span id="total">R$ 0,00</span>
+                    </div>
+                    <div class="cupom-input">
+                        <input type="text" id="cupom" placeholder="Código do cupom">
+                        <button class="aplicar-cupom-btn">Aplicar</button>
+                    </div>
+                    <button class="finalizar-compra-btn">Finalizar Compra</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

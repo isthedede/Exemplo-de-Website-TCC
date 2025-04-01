@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frutas Frescas - Carrinho</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header role="banner">
+        <nav role="navigation" aria-label="Menu principal">
+            <div class="logo">
+                <h1>Frutas Frescas</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" aria-label="Página inicial">Início</a></li>
+                <li><a href="produtos.html" aria-label="Ver produtos">Produtos</a></li>
+                <li><a href="sobre.html" aria-label="Sobre nós">Sobre</a></li>
+                <li><a href="contato.html" aria-label="Contato">Contato</a></li>
+            </ul>
+            <a href="carrinho.html" class="carrinho-btn" aria-label="Abrir carrinho">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="carrinho-contador">0</span>
+            </a>
+        </nav>
+    </header>
+
+    <main role="main">
+        <section id="carrinho" aria-label="Carrinho de compras">
+            <h2>Carrinho de Compras</h2>
+            <div class="carrinho-content">
+                <div class="carrinho-items">
+                </div>
+                <div class="carrinho-resumo">
+                    <h3>Resumo do Pedido</h3>
+                    <div class="resumo-item">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">R$ 0,00</span>
+                    </div>
+                    <div class="resumo-item">
+                        <span>Frete:</span>
+                        <span id="frete">R$ 0,00</span>
+                    </div>
+                    <div class="resumo-item cupom">
+                        <label for="cupom">Cupom de Desconto:</label>
+                        <div class="cupom-input">
+                            <input type="text" id="cupom" name="cupom" placeholder="Digite seu cupom">
+                            <button type="button" class="aplicar-cupom-btn">Aplicar</button>
+                        </div>
+                    </div>
+                    <div class="resumo-item desconto">
+                        <span>Desconto:</span>
+                        <span id="desconto">R$ 0,00</span>
+                    </div>
+                    <div class="resumo-item total">
+                        <span>Total:</span>
+                        <span id="total">R$ 0,00</span>
+                    </div>
+                    <button class="finalizar-compra-btn" aria-label="Finalizar compra">Finalizar Compra</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="endereco-entrega" aria-label="Endereço de entrega">
+            <h2>Endereço de Entrega</h2>
+            <form id="endereco-form" class="endereco-form">
+                <div class="form-group">
+                    <label for="cep">CEP:</label>
+                    <input type="text" id="cep" name="cep" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="endereco">Endereço:</label>
+                    <input type="text" id="endereco" name="endereco" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="numero">Número:</label>
+                    <input type="text" id="numero" name="numero" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="complemento">Complemento:</label>
+                    <input type="text" id="complemento" name="complemento">
+                </div>
+                <div class="form-group">
+                    <label for="bairro">Bairro:</label>
+                    <input type="text" id="bairro" name="bairro" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="cidade">Cidade:</label>
+                    <input type="text" id="cidade" name="cidade" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="estado">Estado:</label>
+                    <input type="text" id="estado" name="estado" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="observacoes">Observações:</label>
+                    <textarea id="observacoes" name="observacoes"></textarea>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre Nós</h3>
+                <p>Especialistas em frutas frescas, oferecendo as melhores maçãs e bananas selecionadas diretamente dos produtores.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Redes Sociais</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Frutas Frescas. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

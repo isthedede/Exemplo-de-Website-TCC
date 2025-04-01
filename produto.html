@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Produto - Frutas Frescas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header role="banner">
+        <nav role="navigation" aria-label="Menu principal">
+            <div class="logo">
+                <h1>Frutas Frescas</h1>
+            </div>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Buscar produtos..." aria-label="Buscar produtos">
+                <button class="search-button" aria-label="Buscar">
+                    <i class="fas fa-search"></i>
+                </button>
+                <div class="search-results"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+            <a href="carrinho.html" class="carrinho-btn" aria-label="Abrir carrinho">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="carrinho-contador">0</span>
+            </a>
+        </nav>
+    </header>
+
+    <main class="produto-detalhes">
+        <div class="produto-container">
+            <div class="produto-imagem">
+                <img src="" alt="" id="produto-img">
+            </div>
+            <div class="produto-info">
+                <h2 id="produto-nome"></h2>
+                <div class="produto-preco">
+                    <span class="preco" id="produto-preco"></span>
+                    <span class="unidade">/kg</span>
+                </div>
+                <div class="produto-avaliacao">
+                    <div class="rating" id="produto-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <span class="avaliacoes-count">(127 avaliações)</span>
+                </div>
+                <div class="produto-descricao">
+                    <h3>Descrição</h3>
+                    <p id="produto-descricao"></p>
+                </div>
+                <div class="produto-nutricional">
+                    <h3>Informações Nutricionais</h3>
+                    <ul id="produto-nutricional">
+                        <!-- Preenchido via JavaScript -->
+                    </ul>
+                </div>
+                <div class="produto-acoes">
+                    <div class="quantidade-selector">
+                        <button class="quantidade-btn diminuir">-</button>
+                        <input type="number" value="1" min="1" id="quantidade">
+                        <button class="quantidade-btn aumentar">+</button>
+                    </div>
+                    <button class="comprar-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <section class="produtos-relacionados">
+            <h2>Produtos Relacionados</h2>
+            <div class="produtos-grid">
+                <!-- Preenchido via JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal do Carrinho -->
+    <div id="carrinhoModal" class="carrinho-modal" aria-hidden="true">
+        <div class="carrinho-conteudo">
+            <div class="carrinho-header">
+                <h2>Seu Carrinho</h2>
+                <button class="fechar-carrinho" aria-label="Fechar carrinho">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="carrinho-items">
+                <!-- Items do carrinho serão inseridos aqui dinamicamente -->
+            </div>
+            <div class="carrinho-total">
+                <div class="carrinho-resumo">
+                    <h3>Resumo do Pedido</h3>
+                    <div class="resumo-item">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">R$ 0,00</span>
+                    </div>
+                    <div class="resumo-item">
+                        <span>Desconto:</span>
+                        <span id="desconto">R$ 0,00</span>
+                    </div>
+                    <div class="resumo-item total">
+                        <span>Total:</span>
+                        <span id="total">R$ 0,00</span>
+                    </div>
+                    <div class="cupom-input">
+                        <input type="text" id="cupom" placeholder="Código do cupom">
+                        <button class="aplicar-cupom-btn">Aplicar</button>
+                    </div>
+                    <button class="finalizar-compra-btn">Finalizar Compra</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Categorias</h3>
+                <ul>
+                    <li><a href="#">Frutas Frescas</a></li>
+                    <li><a href="#">Frutas Secas</a></li>
+                    <li><a href="#">Kits Especiais</a></li>
+                    <li><a href="#">Ofertas</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Informações</h3>
+                <ul>
+                    <li><a href="#">Sobre Nós</a></li>
+                    <li><a href="#">Política de Entrega</a></li>
+                    <li><a href="#">Termos e Condições</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <ul>
+                    <li><i class="fas fa-phone"></i> (11) 1234-5678</li>
+                    <li><i class="fas fa-envelope"></i> contato@frutasfrescas.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Rua das Frutas, 123</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <form id="newsletter-form">
+                    <input type="email" id="newsletter-email" placeholder="Seu e-mail" required>
+                    <button type="submit">Inscrever-se</button>
+                </form>
+                <div class="social-media">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Frutas Frescas. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

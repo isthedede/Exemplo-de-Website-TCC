@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frutas Frescas - Produtos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header role="banner">
+        <nav role="navigation" aria-label="Menu principal">
+            <div class="logo">
+                <h1>Frutas Frescas</h1>
+            </div>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Buscar produtos..." aria-label="Buscar produtos">
+                <button class="search-button" aria-label="Buscar">
+                    <i class="fas fa-search"></i>
+                </button>
+                <div class="search-results">
+                    <!-- Resultados da busca serão inseridos aqui dinamicamente -->
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" aria-label="Página inicial">Início</a></li>
+                <li><a href="produtos.html" aria-label="Ver produtos">Produtos</a></li>
+                <li><a href="sobre.html" aria-label="Sobre nós">Sobre</a></li>
+                <li><a href="contato.html" aria-label="Contato">Contato</a></li>
+            </ul>
+            <a href="carrinho.html" class="carrinho-btn" aria-label="Abrir carrinho">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="carrinho-contador">0</span>
+            </a>
+        </nav>
+    </header>
+
+    <main role="main">
+        <section id="produtos" class="produtos">
+            <h2>Nossos Produtos</h2>
+            <div class="filtros">
+                <div class="filtro-grupo">
+                    <label for="categoria">Categoria:</label>
+                    <select id="categoria">
+                        <option value="todos">Todos</option>
+                        <option value="frutas">Frutas</option>
+                        <option value="legumes">Legumes</option>
+                        <option value="verduras">Verduras</option>
+                    </select>
+                </div>
+                <div class="filtro-grupo">
+                    <label for="preco">Faixa de Preço:</label>
+                    <select id="preco">
+                        <option value="todos">Todos</option>
+                        <option value="0-10">Até R$ 10,00</option>
+                        <option value="10-20">R$ 10,00 - R$ 20,00</option>
+                        <option value="20-30">R$ 20,00 - R$ 30,00</option>
+                        <option value="30+">Acima de R$ 30,00</option>
+                    </select>
+                </div>
+                <div class="filtro-grupo">
+                    <label for="ordenacao">Ordenar por:</label>
+                    <select id="ordenacao">
+                        <option value="nome">Nome</option>
+                        <option value="preco-asc">Menor Preço</option>
+                        <option value="preco-desc">Maior Preço</option>
+                        <option value="avaliacao">Melhor Avaliação</option>
+                    </select>
+                </div>
+            </div>
+            <div class="produtos-grid">
+                <div class="produto-card">
+                    <img src="https://th.bing.com/th/id/OIP.DnBqF1misIba7yN3lja2fwHaHb?rs=1&pid=ImgDetMain" alt="Maçãs Vermelhas">
+                    <h3>Maçãs Vermelhas</h3>
+                    <p>Maçãs frescas e crocantes, ricas em fibras e vitaminas.</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="preco">
+                        R$ 12,90
+                        <span class="unidade">/kg</span>
+                    </div>
+                    <div class="produto-acoes">
+                        <button class="comprar-btn" role="button" aria-label="Comprar Maçãs">Adicionar ao Carrinho</button>
+                        <button class="favorito-btn" aria-label="Adicionar aos favoritos">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="produto-card">
+                    <img src="https://th.bing.com/th/id/OIP.7w4kPAYPE_ecMisRzA1qJwAAAA?rs=1&pid=ImgDetMain" alt="Bananas Prata">
+                    <h3>Bananas Prata</h3>
+                    <p>Bananas doces e nutritivas, fonte natural de potássio.</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="preco">
+                        R$ 8,90
+                        <span class="unidade">/kg</span>
+                    </div>
+                    <div class="produto-acoes">
+                        <button class="comprar-btn" role="button" aria-label="Comprar Bananas">Adicionar ao Carrinho</button>
+                        <button class="favorito-btn" aria-label="Adicionar aos favoritos">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="produto-card">
+                    <img src="https://images.unsplash.com/photo-1557800636-894a64c1696f" alt="Laranjas">
+                    <h3>Laranjas</h3>
+                    <p>Laranjas suculentas e ricas em vitamina C.</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="preco">
+                        R$ 7,90
+                        <span class="unidade">/kg</span>
+                    </div>
+                    <div class="produto-acoes">
+                        <button class="comprar-btn" role="button" aria-label="Comprar Laranjas">Adicionar ao Carrinho</button>
+                        <button class="favorito-btn" aria-label="Adicionar aos favoritos">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="produto-card">
+                    <img src="https://img.quizur.com/f/img605f9cc0c5aba4.57840816.jpg?lastEdited=1616878788" alt="Morangos">
+                    <h3>Morangos</h3>
+                    <p>Morangos frescos e doces, ricos em antioxidantes.</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="preco">
+                        R$ 15,90
+                        <span class="unidade">/kg</span>
+                    </div>
+                    <div class="produto-acoes">
+                        <button class="comprar-btn" role="button" aria-label="Comprar Morangos">Adicionar ao Carrinho</button>
+                        <button class="favorito-btn" aria-label="Adicionar aos favoritos">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="produto-card">
+                    <img src="https://th.bing.com/th/id/OIP.aJ3nuGpglx0SunU0C5FKAwHaEK?rs=1&pid=ImgDetMain" alt="Uvas">
+                    <h3>Uvas</h3>
+                    <p>Uvas doces e sem sementes, perfeitas para consumo.</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="preco">
+                        R$ 18,90
+                        <span class="unidade">/kg</span>
+                    </div>
+                    <div class="produto-acoes">
+                        <button class="comprar-btn" role="button" aria-label="Comprar Uvas">Adicionar ao Carrinho</button>
+                        <button class="favorito-btn" aria-label="Adicionar aos favoritos">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="produto-card">
+                    <img src="https://th.bing.com/th/id/OIP.04Hxw701P8-1cR-o_Gew5wHaEK?rs=1&pid=ImgDetMain" alt="Abacaxis">
+                    <h3>Abacaxis</h3>
+                    <p>Abacaxis maduros e doces, prontos para consumo.</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="preco">
+                        R$ 12,90
+                        <span class="unidade">/unidade</span>
+                    </div>
+                    <div class="produto-acoes">
+                        <button class="comprar-btn" role="button" aria-label="Comprar Abacaxis">Adicionar ao Carrinho</button>
+                        <button class="favorito-btn" aria-label="Adicionar aos favoritos">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="depoimentos" class="depoimentos">
+            <h2>O que nossos clientes dizem</h2>
+            <div class="depoimentos-grid">
+                <div class="depoimento-card">
+                    <div class="estrelas">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"As maçãs são incrivelmente frescas e doces. Melhor qualidade que já encontrei!"</p>
+                    <div class="cliente-info">
+                        <img src="https://scontent.faqa1-1.fna.fbcdn.net/v/t1.6435-9/86460035_2502852659820264_1676836647758462976_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=5bbf69&_nc_eui2=AeE7q3WI5W6h5vpPDXvfH7ssRXkGPGM-V6BFeQY8Yz5XoE2hxSSXM4xn168L6lfgmwDm6qj8jvwF1AGY0HdWrT9U&_nc_ohc=Ua5tv_qvJQ8Q7kNvgGyVrdv&_nc_oc=AdmD_SIkmUmbmx6ID-XrxoFuMdjYn2J3o418QO6tdq7VSjfElRRzFfIZ_fP89gGUIVE&_nc_zt=23&_nc_ht=scontent.faqa1-1.fna&_nc_gid=UlsWw4-ciLbLdq-O9_BaDQ&oh=00_AYE0mT978qCZp78EbxalYR3FjB8uD0qt2QI6bhdXTj_fWQ&oe=680BD339" alt="Foto de Gabriel Barbosa" class="foto-cliente">
+                        <div>
+                            <strong>Gabriel Barbosa</strong>
+                            <span>Cliente desde 2023</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="depoimento-card">
+                    <div class="estrelas">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"As bananas são sempre maduras no ponto certo. Recomendo muito!"</p>
+                    <div class="cliente-info">
+                        <img src="https://scontent.faqa1-1.fna.fbcdn.net/v/t39.30808-6/459423787_3763619227230203_4561110570870860018_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=aa7094&_nc_eui2=AeH9kBFdiXTgYsZfod05TxI4KFuUzNS-ORMoW5TM1L45E3ide6wIONtkgtlEr-A9t8torCDT6z3xZBwcZITmXD8i&_nc_ohc=-cQEHwstEmYQ7kNvgG5W4WP&_nc_oc=AdlxIhxxtiKNIotxwwyUBSGCdaapsQBUxa1J7d4QClZTy9l42_AN-5h9mVF5AOtW-7U&_nc_zt=23&_nc_ht=scontent.faqa1-1.fna&_nc_gid=CTlXbFRROE67Ep5Nmd-bWQ&oh=00_AYFidWbopUVtcpptORsh6hL-BD__oYgW1Lbz2k_weNs4cQ&oe=67EA3B0E" alt="Foto de Vinicius Damasceno" class="foto-cliente">
+                        <div>
+                            <strong>Vinicius Damasceno</strong>
+                            <span>Cliente desde 2022</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="depoimento-card">
+                    <div class="estrelas">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Atendimento excelente e produtos de primeira qualidade. Voltarei sempre!"</p>
+                    <div class="cliente-info">
+                        <img src="https://scontent.faqa1-1.fna.fbcdn.net/v/t39.30808-6/462766820_2835669889923178_7614513049670567574_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHLOtWK3lEIjy_K8rinGn9dzdH1txnRMK_N0fW3GdEwrz7EcGms9PJm_mWjPihUQzF9KdD9I61rHZ8qjN7-bPgZ&_nc_ohc=RK2qeg63l58Q7kNvgHzngRg&_nc_oc=AdnL1ZHdgzXsfUiidfCGdIYSF-HXo9EhUyk3SRy4fXh2SbQd5Zs65ucrcQuFUJ6lpPw&_nc_zt=23&_nc_ht=scontent.faqa1-1.fna&_nc_gid=Ia5-GW9EMUqJMpaksI8fEg&oh=00_AYHXXOioVv9KlxYgYHuGkrgH2_rcQ_XPFVKZqpvL4uyvtA&oe=67EA2660" alt="Foto de Pedro Ruiz" class="foto-cliente">
+                        <div>
+                            <strong>Pedro Ruiz</strong>
+                            <span>Cliente desde 2023</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>CATEGORIAS</h3>
+                <ul>
+                    <li><a href="#">LANÇAMENTOS</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>INFORMAÇÃO</h3>
+                <ul>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="sobre.html">Quem somos?</a></li>
+                    <li><a href="#">Política de Trocas & Devoluções</a></li>
+                    <li><a href="#">Termos de Uso</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>ENTRE EM CONTATO</h3>
+                <ul>
+                    <li>5511987654321</li>
+                    <li>+55 11 91234-5678</li>
+                    <li>contato@frutas.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Frutas Frescas. Todos os direitos reservados.</p>
+            <div class="payment-methods">
+                <img src="https://cdn.icon-icons.com/icons2/2341/PNG/512/visa_payment_method_card_icon_142729.png" alt="Visa" height="30">
+                <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mastercard@2x.png" alt="Mastercard" height="30">
+                <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/amex@2x.png" alt="American Express" height="30">
+                <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/br/elo@2x.png" alt="Elo" height="30">
+                <img src="https://cdn.icon-icons.com/icons2/2341/PNG/512/hipercard_payment_method_card_icon_142739.png" alt="Hipercard" height="30">
+                <img src="https://logospng.org/download/pix/logo-pix-icone-512.png" alt="PIX" height="30">
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- Modal do Carrinho -->
+    <div id="carrinhoModal" class="carrinho-modal" aria-hidden="true">
+        <div class="carrinho-conteudo">
+            <div class="carrinho-header">
+                <h2>Seu Carrinho</h2>
+                <button class="fechar-carrinho" aria-label="Fechar carrinho">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="carrinho-items">
+                <!-- Items do carrinho serão inseridos aqui dinamicamente -->
+            </div>
+            <div class="carrinho-total">
+                <div class="carrinho-resumo">
+                    <h3>Resumo do Pedido</h3>
+                    <div class="resumo-item">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">R$ 0,00</span>
+                    </div>
+                    <div class="resumo-item">
+                        <span>Desconto:</span>
+                        <span id="desconto">R$ 0,00</span>
+                    </div>
+                    <div class="resumo-item total">
+                        <span>Total:</span>
+                        <span id="total">R$ 0,00</span>
+                    </div>
+                    <div class="cupom-input">
+                        <input type="text" id="cupom" placeholder="Código do cupom">
+                        <button class="aplicar-cupom-btn">Aplicar</button>
+                    </div>
+                    <button class="finalizar-compra-btn">Finalizar Compra</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

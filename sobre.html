@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frutas Frescas - Sobre Nós</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header role="banner">
+        <nav role="navigation" aria-label="Menu principal">
+            <div class="logo">
+                <h1>Frutas Frescas</h1>
+            </div>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Buscar produtos..." aria-label="Buscar produtos">
+                <button class="search-button" aria-label="Buscar">
+                    <i class="fas fa-search"></i>
+                </button>
+                <div class="search-results">
+                    <!-- Resultados da busca serão inseridos aqui dinamicamente -->
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" aria-label="Página inicial">Início</a></li>
+                <li><a href="produtos.html" aria-label="Ver produtos">Produtos</a></li>
+                <li><a href="sobre.html" aria-label="Sobre nós">Sobre</a></li>
+                <li><a href="contato.html" aria-label="Contato">Contato</a></li>
+            </ul>
+            <a href="carrinho.html" class="carrinho-btn" aria-label="Abrir carrinho">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="carrinho-contador">0</span>
+            </a>
+        </nav>
+    </header>
+
+    <main role="main">
+        <section id="sobre" aria-label="Sobre nós">
+            <h2>Sobre Nós</h2>
+            <div class="sobre-content">
+                <div class="sobre-texto">
+                    <p>Somos especialistas em frutas frescas, oferecendo as melhores maçãs e bananas selecionadas diretamente dos produtores. Nossa missão é fornecer produtos de alta qualidade com o melhor preço.</p>
+                    <p>Desde 2020, trabalhamos com produtores locais para garantir a frescura e qualidade dos nossos produtos. Nossa equipe é treinada para selecionar apenas as melhores frutas, garantindo a satisfação dos nossos clientes.</p>
+                </div>
+                <div class="sobre-valores">
+                    <h3>Nossos Valores</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Qualidade em primeiro lugar</li>
+                        <li><i class="fas fa-check"></i> Sustentabilidade</li>
+                        <li><i class="fas fa-check"></i> Compromisso com o cliente</li>
+                        <li><i class="fas fa-check"></i> Responsabilidade social</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="localizacao" class="localizacao">
+            <h2>Nossa Localização</h2>
+            <div class="localizacao-content">
+                <div class="mapa">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.197577494987!2d-46.6522777!3d-23.5505199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJzAxLjkiUyA0NsKwMzknMDguMiJX!5e0!3m2!1spt-BR!2sbr!4v1641234567890!5m2!1spt-BR!2sbr" 
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+                <div class="info-localizacao">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Endereço</h3>
+                        <p>Rua das Frutas, 123 - Centro</p>
+                        <p>São Paulo - SP</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <h3>Horário de Funcionamento</h3>
+                        <p>Segunda a Sexta: 8h às 18h</p>
+                        <p>Sábado: 8h às 13h</p>
+                        <p>Domingo: Fechado</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <h3>Contato</h3>
+                        <p>Tel: (11) 1234-5678</p>
+                        <p>WhatsApp: (11) 98765-4321</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>CATEGORIAS</h3>
+                <ul>
+                    <li><a href="#">LANÇAMENTOS</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>INFORMAÇÃO</h3>
+                <ul>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="sobre.html">Quem somos?</a></li>
+                    <li><a href="#">Política de Trocas & Devoluções</a></li>
+                    <li><a href="#">Termos de Uso</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>ENTRE EM CONTATO</h3>
+                <ul>
+                    <li>5511987654321</li>
+                    <li>+55 11 91234-5678</li>
+                    <li>contato@frutas.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Frutas Frescas. Todos os direitos reservados.</p>
+            <div class="payment-methods">
+                <img src="https://cdn.icon-icons.com/icons2/2341/PNG/512/visa_payment_method_card_icon_142729.png" alt="Visa" height="30">
+                <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mastercard@2x.png" alt="Mastercard" height="30">
+                <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/amex@2x.png" alt="American Express" height="30">
+                <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/br/elo@2x.png" alt="Elo" height="30">
+                <img src="https://cdn.icon-icons.com/icons2/2341/PNG/512/hipercard_payment_method_card_icon_142739.png" alt="Hipercard" height="30">
+                <img src="https://logospng.org/download/pix/logo-pix-icone-512.png" alt="PIX" height="30">
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- Modal do Carrinho -->
+    <div id="carrinhoModal" class="carrinho-modal" aria-hidden="true">
+        <div class="carrinho-conteudo">
+            <div class="carrinho-header">
+                <h2>Seu Carrinho</h2>
+                <button class="fechar-carrinho" aria-label="Fechar carrinho">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="carrinho-items">
+                <!-- Items do carrinho serão inseridos aqui dinamicamente -->
+            </div>
+            <div class="carrinho-total">
+                <div class="carrinho-resumo">
+                    <h3>Resumo do Pedido</h3>
+                    <div class="resumo-item">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">R$ 0,00</span>
+                    </div>
+                    <div class="resumo-item">
+                        <span>Desconto:</span>
+                        <span id="desconto">R$ 0,00</span>
+                    </div>
+                    <div class="resumo-item total">
+                        <span>Total:</span>
+                        <span id="total">R$ 0,00</span>
+                    </div>
+                    <div class="cupom-input">
+                        <input type="text" id="cupom" placeholder="Código do cupom">
+                        <button class="aplicar-cupom-btn">Aplicar</button>
+                    </div>
+                    <button class="finalizar-compra-btn">Finalizar Compra</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
