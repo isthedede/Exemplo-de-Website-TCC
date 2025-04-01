@@ -1,6 +1,6 @@
-# Frutas Frescas - Website de E-commerce
+# Website de E-commerce - TCC FATEC
 
-Este é um projeto de website de e-commerce desenvolvido para a disciplina de Trabalho de Conclusão de Curso (TCC) da FATEC. O projeto consiste em uma plataforma online para venda de frutas frescas, oferecendo uma experiência de compra intuitiva e amigável para os usuários.
+Este é um projeto de website de e-commerce desenvolvido para a disciplina de Trabalho de Conclusão de Curso (TCC) da FATEC. O projeto consiste em uma plataforma online para venda de produtos, oferecendo uma experiência de compra intuitiva e amigável para os usuários.
 
 ## Tecnologias Utilizadas
 
