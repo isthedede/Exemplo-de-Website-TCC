@@ -22,6 +22,11 @@ body {
     background-color: var(--background-color);
 }
 
+main {
+    margin-top: 80px; /* Espaço para o header fixo */
+    padding-top: 1rem;
+}
+
 header {
     background-color: var(--primary-color);
     padding: 1rem 0;
@@ -453,6 +458,17 @@ footer {
     cursor: pointer;
     position: relative;
     padding: 0.5rem;
+}
+
+.perfil-btn {
+    background-color: transparent;
+    color: var(--secondary-color);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: relative;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
 }
 
 .carrinho-contador {
