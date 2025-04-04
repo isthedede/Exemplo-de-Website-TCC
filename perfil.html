@@ -155,14 +155,6 @@
             background-color: #f9f9f9;
         }
 
-        .pedido-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #eee;
-        }
-
         .favoritos-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -205,6 +197,80 @@
         .favorito-preco {
             font-weight: bold;
             color: #2ecc71;
+        }
+
+        .favorito-acoes {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .senha-requisitos {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        .senha-requisitos p {
+            margin: 0 0 5px 0;
+            font-weight: bold;
+        }
+
+        .senha-requisitos ul {
+            list-style-type: none;
+            padding-left: 5px;
+            margin: 0;
+        }
+
+        .senha-requisitos li {
+            margin-bottom: 3px;
+        }
+
+        .senha-requisitos i {
+            margin-right: 5px;
+        }
+
+        .senha-feedback {
+            margin-top: 5px;
+            font-size: 0.9em;
+        }
+
+        .senha-requisitos-progressivo {
+            margin-top: 8px;
+            font-size: 0.9em;
+            height: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .requisito-atual {
+            color: #e74c3c;
+            margin: 0;
+            padding-left: 5px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .requisito-cumprido {
+            color: #2ecc71;
+            font-weight: 600;
+        }
+
+        .esqueceu-senha {
+            margin-top: 5px;
+            text-align: right;
+        }
+
+        .esqueceu-senha a {
+            color: #3498db;
+            font-size: 0.85em;
+            text-decoration: none;
+        }
+
+        .esqueceu-senha a:hover {
+            color: #2980b9;
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -309,7 +375,10 @@
                             <div class="favorito-info">
                                 <h3>Maçãs Vermelhas</h3>
                                 <p class="favorito-preco">R$ 12,90/kg</p>
-                                <button class="botao-acao botao-primario">Comprar</button>
+                                <div class="favorito-acoes">
+                                    <button class="botao-acao botao-primario ver-produto" data-nome="${favorito.nome}">Ver Produto</button>
+                                    <button class="botao-acao botao-perigo remover-favorito" data-id="${favorito.id}">Remover</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -321,16 +390,23 @@
                         <div class="form-group">
                             <label for="senha-atual">Senha Atual</label>
                             <input type="password" id="senha-atual" required>
+                            <div class="esqueceu-senha">
+                                <a href="#" id="esqueceu-senha-link">Esqueceu a senha?</a>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="nova-senha">Nova Senha</label>
                             <input type="password" id="nova-senha" required>
+                            <div class="senha-requisitos-progressivo">
+                                <p id="req-atual" class="requisito-atual"></p>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="confirmar-senha">Confirmar Nova Senha</label>
                             <input type="password" id="confirmar-senha" required>
+                            <p id="senha-match" class="senha-feedback"></p>
                         </div>
-                        <button type="submit" class="botao-acao botao-primario">Atualizar Senha</button>
+                        <button type="submit" class="botao-acao botao-primario" id="btn-senha" disabled>Atualizar Senha</button>
                     </form>
                 </div>
             </div>
@@ -388,6 +464,74 @@
             window.location.href = 'login.html';
         }
 
+        // Função para mostrar mensagens de toast
+        function showToast(message, type = 'info', duration = 3000) {
+            let container = document.getElementById('toast-container');
+            if (!container) {
+                container = document.createElement('div');
+                container.id = 'toast-container';
+                container.style.cssText = 'position: fixed; top: 20px; right: 20px; z-index: 9999;';
+                document.body.appendChild(container);
+            }
+            
+            const toast = document.createElement('div');
+            toast.className = `toast toast-${type}`;
+            toast.style.cssText = `
+                margin-bottom: 10px;
+                padding: 15px;
+                border-radius: 4px;
+                color: white;
+                font-weight: bold;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                transition: all 0.3s ease;
+                opacity: 0;
+                transform: translateY(-10px);
+                background-color: ${getToastColor(type)};
+            `;
+            
+            toast.innerHTML = `
+                <div style="display:flex;align-items:center;">
+                    <i class="${getToastIcon(type)}" style="margin-right:10px;"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+            
+            container.appendChild(toast);
+            
+            // Animação de entrada
+            setTimeout(() => {
+                toast.style.opacity = '1';
+                toast.style.transform = 'translateY(0)';
+            }, 10);
+            
+            // Remover depois de um tempo
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(-10px)';
+                setTimeout(() => {
+                    container.removeChild(toast);
+                }, 300);
+            }, duration);
+        }
+        
+        function getToastColor(type) {
+            switch(type) {
+                case 'success': return '#2ecc71';
+                case 'error': return '#e74c3c';
+                case 'warning': return '#f39c12';
+                default: return '#3498db';
+            }
+        }
+        
+        function getToastIcon(type) {
+            switch(type) {
+                case 'success': return 'fas fa-check-circle';
+                case 'error': return 'fas fa-times-circle';
+                case 'warning': return 'fas fa-exclamation-triangle';
+                default: return 'fas fa-info-circle';
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
             // Carregar dados do usuário
             const usuarioAtual = usuarioModel.getUsuarioAtual();
@@ -431,9 +575,63 @@
                     dadosCompletos.favoritos.forEach(favorito => {
                         const itemFavorito = document.createElement('div');
                         itemFavorito.className = 'favorito-item';
-                        // Preencher detalhes do favorito
-                        // ...
+                        itemFavorito.innerHTML = `
+                            <div class="favorito-imagem">
+                                <img src="${favorito.imagem}" alt="${favorito.nome}">
+                            </div>
+                            <div class="favorito-info">
+                                <h3>${favorito.nome}</h3>
+                                <p class="favorito-preco">${favorito.preco}</p>
+                                <div class="favorito-acoes">
+                                    <button class="botao-acao botao-primario ver-produto" data-nome="${favorito.nome}">Ver Produto</button>
+                                    <button class="botao-acao botao-perigo remover-favorito" data-id="${favorito.id}">Remover</button>
+                                </div>
+                            </div>
+                        `;
                         favoritosGrid.appendChild(itemFavorito);
+                    });
+                    
+                    // Adicionar eventos aos botões
+                    document.querySelectorAll('.ver-produto').forEach(btn => {
+                        btn.addEventListener('click', function() {
+                            const nome = this.getAttribute('data-nome');
+                            window.location.href = `produto.html?produto=${encodeURIComponent(nome)}`;
+                        });
+                    });
+                    
+                    document.querySelectorAll('.remover-favorito').forEach(btn => {
+                        btn.addEventListener('click', function() {
+                            const id = this.getAttribute('data-id');
+                            
+                            // Encontrar o usuário
+                            const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+                            const usuario = usuarios.find(u => u.id === usuarioAtual.id);
+                            
+                            if (usuario && usuario.favoritos) {
+                                // Remover o favorito
+                                usuario.favoritos = usuario.favoritos.filter(f => f.id !== id);
+                                
+                                // Salvar alterações
+                                localStorage.setItem('usuarios', JSON.stringify(usuarios));
+                                
+                                // Atualizar a exibição
+                                const item = btn.closest('.favorito-item');
+                                item.style.opacity = '0';
+                                item.style.transform = 'scale(0.8)';
+                                
+                                setTimeout(() => {
+                                    item.remove();
+                                    
+                                    // Verificar se ainda há favoritos
+                                    if (usuario.favoritos.length === 0) {
+                                        favoritosGrid.innerHTML = '<p>Você ainda não tem produtos favoritos.</p>';
+                                    }
+                                }, 300);
+                                
+                                // Mostrar toast
+                                showToast('Produto removido dos favoritos!', 'success');
+                            }
+                        });
                     });
                 } else {
                     document.getElementById('favoritos-grid').innerHTML = '<p>Você ainda não tem produtos favoritos.</p>';
@@ -480,6 +678,29 @@
                 }
             });
             
+            // Verificar requisitos de senha em tempo real
+            document.getElementById('nova-senha').addEventListener('input', function() {
+                const senha = this.value;
+                // Validar senha progressivamente
+                atualizarRequisitosProgressivos(senha);
+                verificarSenhasIguais();
+            });
+
+            document.getElementById('confirmar-senha').addEventListener('input', verificarSenhasIguais);
+            
+            function verificarSenhasIguais() {
+                const senha = document.getElementById('nova-senha').value;
+                const confirmarSenha = document.getElementById('confirmar-senha').value;
+                const senhaMatch = document.getElementById('senha-match');
+                
+                // Remover o aviso durante a digitação
+                senhaMatch.textContent = '';
+                
+                // Habilitar botão sempre que as senhas não estiverem vazias
+                const senhasPreenchidas = senha.length > 0 && confirmarSenha.length > 0;
+                document.getElementById('btn-senha').disabled = !senhasPreenchidas;
+            }
+            
             // Formulário para alterar senha
             document.getElementById('form-senha').addEventListener('submit', function(e) {
                 e.preventDefault();
@@ -489,17 +710,104 @@
                 const confirmarSenha = document.getElementById('confirmar-senha').value;
                 
                 if (novaSenha !== confirmarSenha) {
-                    alert('As senhas não coincidem');
+                    const senhaMatch = document.getElementById('senha-match');
+                    senhaMatch.textContent = 'As senhas não correspondem';
+                    senhaMatch.style.color = '#e74c3c';
+                    showToast('As senhas não coincidem', 'error');
+                    return;
+                }
+                
+                if (!validarSenhaForte(novaSenha)) {
+                    // Mostrar mensagem de erro sem exibir os requisitos
+                    showToast('A senha não atende aos requisitos de segurança', 'error');
                     return;
                 }
                 
                 const resultado = usuarioModel.atualizarSenha(senhaAtual, novaSenha);
                 if (resultado.success) {
-                    alert(resultado.message);
+                    showToast(resultado.message, 'success');
                     document.getElementById('form-senha').reset();
+                    resetValidacaoSenha();
                 } else {
-                    alert(resultado.message);
+                    showToast(resultado.message, 'error');
                 }
+            });
+            
+            // Validação de senha forte
+            function validarSenhaForte(senha) {
+                const temTamanho = senha.length >= 8;
+                const temMaiuscula = /[A-Z]/.test(senha);
+                const temMinuscula = /[a-z]/.test(senha);
+                const temNumero = /[0-9]/.test(senha);
+                const temEspecial = /[^A-Za-z0-9]/.test(senha);
+                
+                return temTamanho && temMaiuscula && temMinuscula && temNumero && temEspecial;
+            }
+            
+            function resetValidacaoSenha() {
+                document.getElementById('req-atual').textContent = '';
+                document.getElementById('req-atual').className = 'requisito-atual';
+                document.getElementById('btn-senha').disabled = true;
+            }
+            
+            function atualizarRequisitosProgressivos(senha) {
+                const reqAtual = document.getElementById('req-atual');
+                
+                if (senha.length === 0) {
+                    reqAtual.textContent = '';
+                    return;
+                }
+                
+                // Verificar tamanho
+                if (senha.length < 8) {
+                    reqAtual.textContent = 'Mínimo de 8 caracteres';
+                    reqAtual.className = 'requisito-atual';
+                    return;
+                }
+                
+                // Verificar letras maiúsculas e minúsculas
+                const temMaiuscula = /[A-Z]/.test(senha);
+                const temMinuscula = /[a-z]/.test(senha);
+                
+                if (!temMaiuscula || !temMinuscula) {
+                    if (!temMaiuscula && !temMinuscula) {
+                        reqAtual.textContent = 'Mínimo de 1 letra maiúscula e 1 minúscula';
+                    } else if (!temMaiuscula) {
+                        reqAtual.textContent = 'Mínimo de 1 letra maiúscula';
+                    } else {
+                        reqAtual.textContent = 'Mínimo de 1 letra minúscula';
+                    }
+                    reqAtual.className = 'requisito-atual';
+                    return;
+                }
+                
+                // Verificar números
+                const temNumero = /[0-9]/.test(senha);
+                
+                if (!temNumero) {
+                    reqAtual.textContent = 'Mínimo de 1 número';
+                    reqAtual.className = 'requisito-atual';
+                    return;
+                }
+                
+                // Verificar caracteres especiais
+                const temEspecial = /[^A-Za-z0-9]/.test(senha);
+                
+                if (!temEspecial) {
+                    reqAtual.textContent = 'Mínimo de 1 caractere especial';
+                    reqAtual.className = 'requisito-atual';
+                    return;
+                }
+                
+                // Todos os requisitos foram atendidos
+                reqAtual.textContent = 'Senha forte ✓';
+                reqAtual.className = 'requisito-atual requisito-cumprido';
+            }
+
+            // Adicionar evento ao link de esqueceu senha
+            document.getElementById('esqueceu-senha-link').addEventListener('click', function(e) {
+                e.preventDefault();
+                showToast('Um e-mail com instruções para redefinir sua senha foi enviado para seu endereço de e-mail.', 'info', 5000);
             });
         });
     </script>

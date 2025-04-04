@@ -146,6 +146,73 @@ class UsuarioModel {
             return { success: false, message: 'Email não encontrado.' };
         }
     }
+
+    // Adiciona um produto aos favoritos
+    adicionarFavorito(produto) {
+        if (!this.usuarioAtual) return { success: false, message: 'Usuário não logado.' };
+
+        // Encontra o usuário
+        const usuario = this.usuarios.find(u => u.id === this.usuarioAtual.id);
+        if (!usuario) return { success: false, message: 'Usuário não encontrado.' };
+
+        // Verifica se o produto já está nos favoritos
+        const produtoExistente = usuario.favoritos.find(p => p.nome === produto.nome);
+        if (produtoExistente) {
+            return { success: false, message: 'Produto já está nos favoritos.' };
+        }
+
+        // Adiciona aos favoritos
+        usuario.favoritos.push({
+            id: Date.now().toString(),
+            nome: produto.nome,
+            preco: produto.preco,
+            imagem: produto.imagem
+        });
+
+        // Salva alterações
+        this._salvarDados();
+
+        return { success: true, message: 'Produto adicionado aos favoritos!' };
+    }
+
+    // Remove um produto dos favoritos
+    removerFavorito(idProduto) {
+        if (!this.usuarioAtual) return { success: false, message: 'Usuário não logado.' };
+
+        // Encontra o usuário
+        const usuario = this.usuarios.find(u => u.id === this.usuarioAtual.id);
+        if (!usuario) return { success: false, message: 'Usuário não encontrado.' };
+
+        // Encontra o índice do produto
+        const index = usuario.favoritos.findIndex(p => p.id === idProduto);
+        if (index === -1) return { success: false, message: 'Produto não encontrado nos favoritos.' };
+
+        // Remove o produto
+        usuario.favoritos.splice(index, 1);
+
+        // Salva alterações
+        this._salvarDados();
+
+        return { success: true, message: 'Produto removido dos favoritos!' };
+    }
+
+    // Retorna os favoritos do usuário
+    getFavoritos() {
+        if (!this.usuarioAtual) return [];
+
+        const usuario = this.usuarios.find(u => u.id === this.usuarioAtual.id);
+        return usuario ? usuario.favoritos : [];
+    }
+
+    // Verifica se um produto está nos favoritos
+    estaNaListaFavoritos(nomeProduto) {
+        if (!this.usuarioAtual) return false;
+
+        const usuario = this.usuarios.find(u => u.id === this.usuarioAtual.id);
+        if (!usuario) return false;
+
+        return !!usuario.favoritos.find(p => p.nome === nomeProduto);
+    }
 }
 
 export default UsuarioModel; 
