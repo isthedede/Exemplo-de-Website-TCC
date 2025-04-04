@@ -839,7 +839,16 @@ function filtrarEOrdenarProdutos() {
             
             // Adicionar evento de clique para o card
             card.addEventListener('click', (e) => {
-                if (!e.target.classList.contains('comprar-btn') && !e.target.classList.contains('favorito-btn') && !e.target.closest('.favorito-btn')) {
+                // Verificar se o clique foi no botão de favoritos ou no ícone dentro dele
+                const isFavoritoBtn = e.target.classList.contains('favorito-btn') || 
+                                     e.target.closest('.favorito-btn');
+                                     
+                // Verificar se o clique foi no botão de compra
+                const isComprarBtn = e.target.classList.contains('comprar-btn') || 
+                                    e.target.closest('.comprar-btn');
+                                    
+                // Só redirecionar se o clique não foi em nenhum dos botões de ação
+                if (!isFavoritoBtn && !isComprarBtn) {
                     redirecionarParaDetalhes(produto.nome);
                 }
             });
@@ -1312,7 +1321,16 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.produto-card').forEach(card => {
         const nome = card.querySelector('h3').textContent;
         card.addEventListener('click', (e) => {
-            if (!e.target.classList.contains('comprar-btn')) {
+            // Verificar se o clique foi no botão de favoritos ou no ícone dentro dele
+            const isFavoritoBtn = e.target.classList.contains('favorito-btn') || 
+                                 e.target.closest('.favorito-btn');
+                                 
+            // Verificar se o clique foi no botão de compra
+            const isComprarBtn = e.target.classList.contains('comprar-btn') || 
+                                e.target.closest('.comprar-btn');
+                                
+            // Só redirecionar se o clique não foi em nenhum dos botões de ação
+            if (!isFavoritoBtn && !isComprarBtn) {
                 redirecionarParaDetalhes(nome);
             }
         });
@@ -1325,4 +1343,99 @@ document.addEventListener('DOMContentLoaded', () => {
 // Adiciona evento de clique no logo para redirecionar para a página inicial
 document.querySelector('.logo').addEventListener('click', () => {
     window.location.href = 'index.html';
-}); 
+});
+
+// Adicionar evento para o botão de favoritos
+document.addEventListener('DOMContentLoaded', () => {
+    // Delegação de eventos para botões de favoritos
+    document.addEventListener('click', (e) => {
+        const favoritoBtn = e.target.closest('.favorito-btn');
+        if (favoritoBtn) {
+            e.stopPropagation(); // Evitar que o clique propague para o card
+            e.preventDefault();
+            
+            // Verificar se o usuário está logado
+            const usuarioAtual = JSON.parse(localStorage.getItem('usuarioAtual'));
+            if (!usuarioAtual) {
+                // Redirecionar para a página de login
+                showToast('Faça login para adicionar aos favoritos', 'info');
+                setTimeout(() => {
+                    window.location.href = 'login.html';
+                }, 1500);
+                return;
+            }
+            
+            // Obter informações do produto
+            const produtoCard = favoritoBtn.closest('.produto-card');
+            const nome = produtoCard.querySelector('h3').textContent;
+            const preco = produtoCard.querySelector('.preco').textContent.trim().split('\n')[0].trim();
+            const imagem = produtoCard.querySelector('img').src;
+            
+            // Verificar se o produto já está nos favoritos
+            const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+            const usuario = usuarios.find(u => u.id === usuarioAtual.id);
+            
+            if (!usuario) {
+                showToast('Erro ao processar sua solicitação', 'error');
+                return;
+            }
+            
+            // Inicializar a lista de favoritos se não existir
+            if (!usuario.favoritos) {
+                usuario.favoritos = [];
+            }
+            
+            const produtoExistente = usuario.favoritos.find(p => p.nome === nome);
+            
+            if (produtoExistente) {
+                // Remover dos favoritos
+                usuario.favoritos = usuario.favoritos.filter(p => p.nome !== nome);
+                // Atualizar ícone
+                const heartIcon = favoritoBtn.querySelector('i');
+                heartIcon.className = 'far fa-heart';
+                // Mostrar mensagem
+                showToast('Produto removido dos favoritos', 'info');
+            } else {
+                // Adicionar aos favoritos
+                usuario.favoritos.push({
+                    id: Date.now().toString(),
+                    nome,
+                    preco,
+                    imagem
+                });
+                // Atualizar ícone
+                const heartIcon = favoritoBtn.querySelector('i');
+                heartIcon.className = 'fas fa-heart';
+                // Mostrar mensagem
+                showToast('Produto adicionado aos favoritos', 'success');
+            }
+            
+            // Salvar alterações
+            localStorage.setItem('usuarios', JSON.stringify(usuarios));
+        }
+    });
+    
+    // Inicializar os ícones de favoritos com base no estado atual
+    atualizarIconesFavoritos();
+});
+
+// Função para atualizar os ícones de favoritos quando a página carrega
+function atualizarIconesFavoritos() {
+    const usuarioAtual = JSON.parse(localStorage.getItem('usuarioAtual'));
+    if (!usuarioAtual) return;
+    
+    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+    const usuario = usuarios.find(u => u.id === usuarioAtual.id);
+    
+    if (!usuario || !usuario.favoritos) return;
+    
+    document.querySelectorAll('.produto-card').forEach(card => {
+        const nome = card.querySelector('h3').textContent;
+        const estaNosFavoritos = usuario.favoritos.some(p => p.nome === nome);
+        
+        if (estaNosFavoritos) {
+            const heartIcon = card.querySelector('.favorito-btn i');
+            heartIcon.className = 'fas fa-heart';
+        }
+    });
+} 

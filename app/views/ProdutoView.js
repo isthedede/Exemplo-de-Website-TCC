@@ -31,6 +31,21 @@ class ProdutoView {
         card.className = 'produto-card';
         card.dataset.categoria = produto.categoria;
         
+        // Obter o modelo de usuário para verificar favoritos
+        let usuarioModel = null;
+        try {
+            // Só importa se o ModelFactory estiver disponível
+            if (window.ModelFactory || globalThis.ModelFactory) {
+                usuarioModel = (window.ModelFactory || globalThis.ModelFactory).createUsuarioModel();
+            }
+        } catch (error) {
+            console.error('Erro ao inicializar UsuarioModel:', error);
+        }
+        
+        // Verificar se o produto está nos favoritos
+        const estaNosFavoritos = usuarioModel && usuarioModel.estaLogado() && 
+                               usuarioModel.estaNaListaFavoritos(produto.nome);
+        
         // Gerar HTML das estrelas
         let starsHtml = '';
         const avaliacao = produto.avaliacao;
@@ -57,8 +72,8 @@ class ProdutoView {
             </div>
             <div class="produto-acoes">
                 <button class="comprar-btn" role="button" aria-label="Comprar ${produto.nome}">Adicionar ao Carrinho</button>
-                <button class="favorito-btn" aria-label="Adicionar aos favoritos">
-                    <i class="far fa-heart"></i>
+                <button class="favorito-btn" aria-label="${estaNosFavoritos ? 'Remover dos favoritos' : 'Adicionar aos favoritos'}">
+                    <i class="${estaNosFavoritos ? 'fas' : 'far'} fa-heart"></i>
                 </button>
             </div>
         `;

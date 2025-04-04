@@ -155,12 +155,12 @@ class ProdutoModel {
         return this.produtos;
     }
 
-    getProdutoPorNome(nome) {
+    getProduto(nome) {
         return this.produtos.find(produto => produto.nome === nome);
     }
 
     getProdutoDetalhado(nome) {
-        return this.produtosDetalhados[nome];
+        return this.produtosDetalhados[nome] || null;
     }
 
     filtrarProdutos(filtros) {
